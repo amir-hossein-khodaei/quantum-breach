@@ -40,13 +40,16 @@ const GameSession = () => {
     return 1 + (instability / 100) * 4;
   }, [instability]);
 
+  // --- FIX: Responsive Camera Logic ---
+  const isMobile = window.innerWidth < 768;
+  // Mobile needs to be much further back ([0, 20, 24]) to fit the width in portrait mode
+  // Desktop fits comfortably closer ([0, 10, 15])
+  const initialCameraPos: [number, number, number] = isMobile ? [0, 14, 15] : [0, 8, 9];
+
   // OPTIMIZATION: Resource Cleanup on Unmount
   useEffect(() => {
     return () => {
-      // 1. Dispose Geometry Cache
       GeometryManager.dispose();
-
-      // 2. Clean up XR session
       // @ts-ignore
       if (store.session) {
           // @ts-ignore
@@ -87,7 +90,6 @@ const GameSession = () => {
         await store.enterAR(sessionOptions);
         setArStarted(true);
       } catch (e: any) {
-        // Fallback
         try {
             // @ts-ignore
             await store.enterAR({ requiredFeatures: ['local-floor'], optionalFeatures: ['hit-test'] });
@@ -102,7 +104,6 @@ const GameSession = () => {
   if (status === 'waiting_for_opponent') {
     return (
       <div className="w-full h-full bg-black flex flex-col items-center justify-center relative overflow-hidden">
-        {/* Waiting Room still needs its own background since Game Canvas isn't mounted yet */}
         <div className="absolute inset-0 z-0">
            <Canvas camera={{ position: [0, 0, 30], fov: 60 }} resize={{ scroll: false }}>
              <BackgroundScene speed={0.5} autoShift={true} />
@@ -170,19 +171,17 @@ const GameSession = () => {
       </div>
 
       {/* --- 3D SCENE LAYER --- */}
-      {/* 
-         CRITICAL OPTIMIZATION #2: 
-         Single Canvas for everything (Game + Background) 
-      */}
       <Canvas 
         className="z-10"
         dpr={[1, 1.5]} 
+        // --- FIX: Camera Position Applied Here ---
+        camera={{ position: initialCameraPos, fov: 50 }}
         gl={{ 
           powerPreference: "high-performance",
-          antialias: !isARMode, // Disable AA in AR for performance
+          antialias: !isARMode, 
           stencil: true,
           depth: true,
-          alpha: isARMode // Transparent canvas only needed for AR passthrough
+          alpha: isARMode 
         }} 
         style={{ position: 'absolute', top: 0, left: 0, zIndex: 1 }}
       >
@@ -197,14 +196,14 @@ const GameSession = () => {
            </XR>
         ) : (
            <>
-             {/* Background is now INSIDE the game canvas */}
              <BackgroundScene speed={backgroundSpeed} autoShift={false} />
              
              <OrbitControls 
                makeDefault
                minPolarAngle={0} 
                maxPolarAngle={Math.PI / 2.2}
-               maxDistance={25}
+               // --- FIX: Increased maxDistance to allow mobile view to work ---
+               maxDistance={isMobile ? 50 : 30}
                minDistance={5}
                enablePan={true}
              />
