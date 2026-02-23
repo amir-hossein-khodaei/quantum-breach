@@ -3,11 +3,17 @@
 <div align="center">
 
 <!-- PROJECT BANNER: Cyberpunk Gradient to match the game's Neon Blue/Red aesthetic -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00f3ff,100:ff0055&height=220&section=header&text=QUANTUM%20BREACH&fontSize=70&fontColor=ffffff&fontAlign=50&animation=fadeIn&desc=Browser-Based%20Cyberpunk%20Strategy&descAlign=50&descSize=20" alt="Quantum Breach Cyberpunk Strategy Game Banner" width="100%" />
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00f3ff,100:ff0055&height=220&section=header&text=QUANTUM%20BREACH&fontSize=70&fontColor=ffffff&fontAlign=50&animation=fadeIn&" alt="Quantum Breach Cyberpunk Strategy Game Banner" width="100%" />
+
+<div align="center">
+<img src="public/icon.svg" width="150" height="150"/>
+</div>
 
 <!-- TYPING SVG: Dynamic value propositions -->
 <a href="https://quantum-breach.vercel.app/">
-  <img src="https://readme-typing-svg.demolab.com?font=Courier+New&weight=700&size=24&duration=3000&pause=1000&color=00F3FF&center=true&vCenter=true&width=500&lines=High-Fidelity+WebXR+Strategy;Minimax+AI+on+Web+Workers;Deterministic+Multiplayer+Sync;60FPS+React+Three+Fiber" alt="Typing animation: WebXR Strategy, Minimax AI, Multiplayer Sync" />
+
+  <img src="https://readme-typing-svg.demolab.com?font=Courier+New&weight=700&size=24&duration=3000&pause=1000&color=00F3FF&center=true&vCenter=true&width=500&lines=High-Fidelity+WebXR+Strategy;Minimax+AI+on+Web+Workers;Deterministic+Multiplayer+Sync;60FPS+React+Three+Fiber;Browser-Based+Cyberpunk+Strategy" alt="Typing animation: WebXR Strategy, Minimax AI, Multiplayer Sync" />
 </a>
 
 <!-- BADGES: High-level status and tech stack -->
@@ -26,7 +32,7 @@
 
 <!-- ACTION BUTTONS -->
 <a href="https://quantum-breach.vercel.app/">
-  <img src="https://img.shields.io/badge/PLAY_NOW-000000?style=flat-square&logo=google-play&logoColor=white&labelColor=00f3ff" alt="Play Quantum Breach Live" height="35" />
+  <img src="https://img.shields.io/badge/🔴_Live_Demo-Play_Now-ffd700?style=for-the-badge&logoColor=black" alt="Play Quantum Breach Live" height="35" />
 </a>
 &nbsp;
 <a href="#-getting-started">
@@ -43,6 +49,9 @@
 ---
 
 ## 📑 Table of Contents
+
+<details>
+<summary><strong>Expand to view full navigation</strong></summary>
 
 - [About The Project](#-about-the-project)
   - [The Problem & Solution](#the-problem--solution)
@@ -62,6 +71,8 @@
 - [Contributing](#-contributing)
 - [License](#-license)
 - [Contact](#-contact)
+
+</details>
 
 ---
 
@@ -96,20 +107,6 @@ This project leverages a cutting-edge stack optimized for 3D performance and rea
 
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## 🎬 Demo & Visuals
 
 Experience the intersection of high-performance rendering and algorithmic strategy.
@@ -117,7 +114,7 @@ Experience the intersection of high-performance rendering and algorithmic strate
 <div align="center">
   <br />
   <!-- REPLACE: Add a GIF or Screenshot here (e.g., assets/gameplay-demo.gif) -->
-  <img src="https://via.placeholder.com/800x450/050505/00f3ff?text=Gameplay+Preview+Placeholder" alt="Quantum Breach Gameplay Screenshot showing 3D grid and neon UI" width="100%" style="border-radius: 10px; border: 1px solid #333;" />
+  <img src="public/screenshot.png" alt="Quantum Breach Gameplay Screenshot showing 3D grid and neon UI" width="100%" style="border-radius: 10px; border: 1px solid #333;" />
   <br />
   <p><i><b>Figure 1:</b> The 6x6 Quantum Grid rendered in Three.js with post-processing bloom effects.</i></p>
 </div>
@@ -341,7 +338,7 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ---
 
-## 📞 Contact & Acknowledgments
+## 👨‍💻 Contact & Acknowledgments
 
 **Amir Hossein Khodaei** - [GitHub](https://github.com/Amkhodaei83)
 
@@ -358,5 +355,8 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 *   [Socket.io](https://socket.io/) for the robust WebSocket implementation.
 *   [Capsule Render](https://github.com/kyechan99/capsule-render) for the header art.
 
----
+<br />
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00f3ff,100:ff0055&height=100&section=footer" width="100%" alt="Footer Wave">
+</div>
 
