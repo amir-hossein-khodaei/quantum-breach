@@ -1,0 +1,41 @@
+﻿name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+# Cancel in-progress runs on the same branch to save Action minutes
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: 🛡️ Quality & Build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout Code
+      uses: actions/checkout@v4
+
+    - name: 🟢 Setup Node.js 20
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: 📦 Install Dependencies
+      run: npm ci
+
+    - name: 🧹 Lint (ESLint)
+      run: npm run lint
+      # Fails if code style violations are found
+
+    - name: 🏗️ Type Check & Build
+      run: npm run build
+      # Fails if TypeScript errors exist or Vite build fails
+      # Note: 'tsc -b' is included in the build script via package.json
+
+    # FUTURE: Add 'npm test' here once Vitest/Jest is configured
