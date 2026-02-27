@@ -340,10 +340,10 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ## 👨‍💻 Contact & Acknowledgments
 
-**Amir Hossein Khodaei** - [GitHub](https://github.com/Amkhodaei83)
+**Amir Hossein Khodaei** - [GitHub](https://github.com/amir-hossein-khodae)
 
 <div align="left">
-  <a href="https://github.com/Amkhodaei83">
+  <a href="https://github.com/amir-hossein-khodae">
     <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Profile" />
   </a>
 </div>
