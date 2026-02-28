@@ -1,98 +1,63 @@
-﻿# Contributing to quantum-breach
+# Contributing to quantum-breach-webxr
 
-First off, thanks for taking the time to contribute! :heart:
+Thank you for your interest! This is a high-performance WebXR strategy game
+built with React Three Fiber, TypeScript, and Socket.io. Contributions that
+improve the AI, rendering performance, or multiplayer reliability are welcome.
 
-All types of contributions are encouraged and valued. See the [Table of Contents](#table-of-contents) for different ways to help and details about how this project handles them.
+## Prerequisites
 
-## Table of Contents
+- **Node.js v18+**
+- **npm** or **yarn**
+- A WebXR-compatible browser (Chrome on Android for AR mode)
 
-- [I Have a Question](#i-have-a-question)
-- [I Want To Contribute](#i-want-to-contribute)
-  - [Reporting Bugs](#reporting-bugs)
-  - [Suggesting Enhancements](#suggesting-enhancements)
-- [Development Setup](#development-setup)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Running Locally](#running-locally)
-- [Submission Guidelines](#submission-guidelines)
+## Local Development Setup
 
-## Development Setup
+This project requires two terminals running simultaneously:
 
-This project uses a modern web stack designed for high-performance 3D rendering.
-
-### Tech Stack
-- **Frontend:** React 19, Three.js, React Three Fiber (R3F)
-- **State:** Zustand (Transient updates)
-- **AR/VR:** WebXR via @react-three/xr
-- **Backend:** Node.js + Socket.io (Deterministic Multiplayer)
-
-### Prerequisites
-- Node.js >= 20.x
-- npm >= 9.x
-- Git
-
-### Installation
-
-1. Fork and clone the repo:
-   `ash
-   git clone https://github.com/your-username/quantum-breach.git
-   cd quantum-breach
-   `
-
-2. Install dependencies:
-   `ash
-   npm install
-   `
-
-### Running Locally
-
-This project requires **two terminals** running simultaneously to support multiplayer features.
-
-**Terminal 1: WebSocket Server**
-`ash
+**Terminal 1 — WebSocket Server:**
+```
 node server/index.js
-`
+```
 
-**Terminal 2: Frontend (Vite)**
-`ash
+**Terminal 2 — React Frontend:**
+```
+npm install
 npm run dev
-`
+```
 
-Open \http://localhost:5173\ to view the app.
+Then open `http://localhost:5173` in your browser.
 
-## Submission Guidelines
+## What to Contribute
 
-### Branching Strategy
-We follow a simplified Git flow:
-- \main\ is the production branch.
-- Create feature branches off \main\.
-- Name branches descriptively:
-  - \eat/spectator-mode\
-  - \ix/mobile-touch-events\
-  - \docs/update-readme\
+- 🤖 **AI improvements** — deeper Minimax search, better heuristics
+- 🌐 **Multiplayer stability** — edge cases in deterministic sync
+- 📱 **WebXR / AR enhancements** — surface detection, device compatibility
+- ⚡ **Performance** — render loop optimizations, draw call reduction
+- 🐛 **Bug fixes** — especially cross-browser or mobile issues
 
-### Commit Messages
-We use **Conventional Commits** to automate release notes.
-Format: \<type>(<scope>): <subject>\
+## Code Style
 
-Examples:
-- \eat(ai): optimize minimax alpha pruning depth\
-- \ix(net): resolve socket reconnection loop\
-- \chore(deps): upgrade three.js to v0.160\
+- **TypeScript strict mode** is enforced — no `any` types.
+- Use **functional React components** with hooks only.
+- State management is handled exclusively via **Zustand** — do not introduce
+  additional state libraries.
+- For render-critical state (animations), use Zustand **transient updates**
+  (`subscribe`) to bypass React's render cycle.
+- Follow the existing file structure: game logic in `src/game/`,
+  components in `src/components/`, the AI worker in `src/workers/`.
 
-### Pull Request Checklist
-- [ ] I have tested my changes locally.
-- [ ] I have run the linter (\
-pm run lint\).
-- [ ] I have updated documentation if applicable.
-- [ ] My code follows the project's style (Prettier/ESLint).
+## Commit Convention
 
-## Reporting Bugs
+We follow [Conventional Commits](https://www.conventionalcommits.org/):
+- `feat:` New feature
+- `fix:` Bug fix
+- `perf:` Performance improvement
+- `docs:` Documentation only
+- `refactor:` Code restructuring
 
-This section guides you through submitting a bug report for quantum-breach.
-- Use a clear and descriptive title.
-- Describe the exact steps to reproduce the problem.
-- Provide specific examples to demonstrate the steps.
-- Describe the behavior you observed after following the steps.
+## Pull Request Checklist
 
-Thank you for contributing to the quantum realm!
+- [ ] `npm run build` completes without errors or TypeScript warnings
+- [ ] Tested in both Single Player and Multiplayer modes
+- [ ] No regressions in 60FPS rendering on a mid-range device
+- [ ] (If AR-related) Tested on a physical WebXR-compatible device

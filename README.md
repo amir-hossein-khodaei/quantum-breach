@@ -21,7 +21,7 @@
   <a href="https://quantum-breach.vercel.app/">
     <img src="https://img.shields.io/badge/Deployment-Live_Demo-success?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo Deployment Status" />
   </a>
-  <a href="https://github.com/Amkhodaei83/quantum-breach/blob/main/LICENSE">
+  <a href="https://github.com/amir-hossein-khodaei/quantum-breach-webxr/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge&logo=open-source-initiative&logoColor=white" alt="MIT License" />
   </a>
   <img src="https://img.shields.io/badge/Engine-React_Three_Fiber-black?style=for-the-badge&logo=three.js&logoColor=white" alt="Built with React Three Fiber" />
@@ -164,7 +164,7 @@ To run **Quantum Breach** locally, you need a standard Node.js environment. This
 
 1.  **Clone the repository**
     ```bash
-    git clone https://github.com/Amkhodaei83/quantum-breach.git
+    git clone https://github.com/amir-hossein-khodaei/quantum-breach-webxr.git
     cd quantum-breach
     ```
 
@@ -312,7 +312,7 @@ interface MovePayload {
 - [ ] **Persistent Stats:** PostgreSQL integration for leaderboards
 - [ ] **Sound Design:** Spatial audio implementation
 
-See the [open issues](https://github.com/Amkhodaei83/quantum-breach/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/amir-hossein-khodaei/quantum-breach-webxr/issues) for a full list of proposed features (and known issues).
 
 ---
 
