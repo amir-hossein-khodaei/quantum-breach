@@ -165,7 +165,7 @@ To run **Quantum Breach** locally, you need a standard Node.js environment. This
 1.  **Clone the repository**
     ```bash
     git clone https://github.com/amir-hossein-khodaei/quantum-breach-webxr.git
-    cd quantum-breach
+    cd quantum-breach-webxr
     ```
 
 2.  **Install dependencies**

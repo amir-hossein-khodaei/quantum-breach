@@ -132,7 +132,7 @@ const Home = () => {
 
       {/* FOOTER */}
       <a 
-        href="https://github.com/Amkhodaei83" 
+        href="https://github.com/amir-hossein-khodaei" 
         target="_blank" 
         rel="noopener noreferrer"
         className="absolute bottom-6 z-20 group cursor-pointer"
